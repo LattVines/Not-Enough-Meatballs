@@ -4,7 +4,7 @@ using System.Collections;
 public class BadGuy : GameUnit {
 
 
-	NavMeshAgent agent;
+	UnityEngine.AI.NavMeshAgent agent;
 	public GameObject projectile, death_explosion;//SET IN EDITOR
 
 	AudioSource sfx_src;
@@ -39,7 +39,7 @@ public class BadGuy : GameUnit {
 	Transform player_trans;
 	void Awake(){
 		sfx_src = GetComponent<AudioSource>();
-		agent = GetComponent<NavMeshAgent>();
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
 		player_trans = GameObject.FindGameObjectWithTag("Player").transform;
 	}
@@ -204,7 +204,7 @@ public class BadGuy : GameUnit {
 			}
 			else{
 				
-				enemies_excluding_self[i] = gur.gameObject;//it happens right here. But when I used debugger everything looks correct
+				enemies_excluding_self[i] = gur.gameObject;//Bug happens here. But when I used debugger everything looks correct
 			}
 
 		}
